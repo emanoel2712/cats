@@ -19,12 +19,12 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "cats"
+rootProject.name = "imgur"
 include(":app")
 //include(":core")
 include(":core:design_system")
-include(":features:gallery")
 include(":core:data")
 include(":core:domain")
 include(":core:network")
 include(":core:model")
+include(":features:gallery")

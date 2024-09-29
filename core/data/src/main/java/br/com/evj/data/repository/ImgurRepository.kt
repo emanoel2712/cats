@@ -1,7 +1,9 @@
 package br.com.evj.data.repository
 
-import br.com.evj.model.ImageDetail
+import androidx.paging.PagingData
+import br.com.evj.model.GalleryItem
+import kotlinx.coroutines.flow.Flow
 
 interface ImgurRepository {
-    suspend fun fetchGallery(): Result<List<ImageDetail>>
+    fun fetchGallery(search: String): Flow<PagingData<GalleryItem>>
 }

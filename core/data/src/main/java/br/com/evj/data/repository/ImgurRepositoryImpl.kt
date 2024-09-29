@@ -1,32 +1,31 @@
 package br.com.evj.data.repository
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import br.com.evj.data.data_source.GalleryPagingDataSource
 import br.com.evj.data.data_source.ImgurApiDataSource
-import br.com.evj.data.response.toModel
-import br.com.evj.model.ImageDetail
-import retrofit2.HttpException
-import java.io.IOException
+import br.com.evj.model.GalleryItem
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ImgurRepositoryImpl @Inject constructor(private val imgurApiDataSource: ImgurApiDataSource) :
-    ImgurRepository {
-    override suspend fun fetchGallery(): Result<List<ImageDetail>> {
-        return try {
-            val response = imgurApiDataSource.fetchGallery("dogs")
-            val gallery = response.map { it.toModel() }
-            Result.success(gallery)
-        } catch (e: IOException) {
-            Result.failure(Exception(e.message ?: "Unknown error"))
-        } catch (e: HttpException) {
-            /*Result.failure(
-                Exception(
-                    e.response()?.errorBody()?.getErrorMsg() ?: StringUtils.getString(
-                        R.string.error_unknown
-                    )
-                )
-            )*/
-            Result.failure(Exception(e.message ?: "Unknown error"))
-        } catch (ex: Exception) {
-            Result.failure(ex)
+class ImgurRepositoryImpl @Inject constructor(
+    private val imgurApiDataSource: ImgurApiDataSource
+) : ImgurRepository {
+
+    private var cachedPagingSource: GalleryPagingDataSource? = null
+
+    override fun fetchGallery(search: String): Flow<PagingData<GalleryItem>> {
+        if (cachedPagingSource == null) {
+            cachedPagingSource = GalleryPagingDataSource(imgurApiDataSource, search)
         }
+
+        return Pager(
+            config = PagingConfig(
+                pageSize = 20,
+                enablePlaceholders = false
+            ),
+            pagingSourceFactory = { cachedPagingSource!! }
+        ).flow
     }
 }

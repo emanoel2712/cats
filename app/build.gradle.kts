@@ -52,11 +52,6 @@ android {
 }
 
 dependencies {
-implementation(project(":features:gallery"))
-    //    implementation(project(":core:data"))
-//    implementation(project(":core:domain"))
-//    implementation(project(":core:network"))
-    //    implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -67,7 +62,6 @@ implementation(project(":features:gallery"))
     implementation(libs.material)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-//    implementation(libs.hilt.compiler)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
@@ -76,7 +70,7 @@ implementation(project(":features:gallery"))
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-//    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
-//    debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(project(":features:gallery"))
 }

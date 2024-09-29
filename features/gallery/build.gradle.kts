@@ -48,25 +48,24 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.android)
-//    kapt(libs.hilt.compiler)
-
     implementation(libs.hilt.navigation.compose)
-
-//    implementation(libs.hilt.android)
-//    implementation(libs.hilt.compiler)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-//    implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.compose)
+    implementation(libs.coil)
+    implementation(libs.coil.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":core:domain"))
+    implementation(project(":core:model"))
 }
 
 //kapt {

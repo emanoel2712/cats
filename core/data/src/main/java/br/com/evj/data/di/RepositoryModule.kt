@@ -1,5 +1,6 @@
 package br.com.evj.data.di
 
+import br.com.evj.data.data_source.GalleryPagingDataSource
 import br.com.evj.data.data_source.ImgurApiDataSource
 import br.com.evj.data.repository.ImgurRepository
 import br.com.evj.data.repository.ImgurRepositoryImpl
@@ -15,6 +16,11 @@ class RepositoryModule {
     @Provides
     fun provideImgurApiDataSource(serviceProvider: ServiceProvider): ImgurApiDataSource {
         return serviceProvider.createService(ImgurApiDataSource::class.java)
+    }
+
+    @Provides
+    fun provideGalleryPagingDataSource(imgurApiDataSource: ImgurApiDataSource): GalleryPagingDataSource {
+        return GalleryPagingDataSource(imgurApiDataSource)
     }
 
     @Provides

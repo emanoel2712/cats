@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "br.com.evj.cats"
+    namespace = "br.com.evj.imgur"
     compileSdk = 34
 
     defaultConfig {

@@ -22,7 +22,6 @@ dependencyResolutionManagement {
 rootProject.name = "cats"
 include(":app")
 //include(":core")
-//include(":features")
 include(":core:design_system")
 include(":features:gallery")
 include(":core:data")

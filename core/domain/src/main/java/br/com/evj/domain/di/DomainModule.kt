@@ -12,7 +12,7 @@ import dagger.hilt.components.SingletonComponent
 class DomainModule {
 
     @Provides
-    fun provideFetchCatsUseCase(fetchCatsUseCaseImpl: FetchGalleryUseCaseImpl): FetchGalleryUseCase {
-        return fetchCatsUseCaseImpl
+    fun provideFetchGalleryUseCase(fetchGalleryUseCaseImpl: FetchGalleryUseCaseImpl): FetchGalleryUseCase {
+        return fetchGalleryUseCaseImpl
     }
 }

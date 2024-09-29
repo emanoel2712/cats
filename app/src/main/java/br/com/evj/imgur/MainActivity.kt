@@ -1,4 +1,4 @@
-package br.com.evj.gallery
+package br.com.evj.imgur
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,8 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import br.com.evj.gallery.listing.CatsScreen
-import br.com.evj.gallery.ui.theme.CatsTheme
+import br.com.evj.imgur.listing.GalleryScreen
+import br.com.evj.imgur.ui.theme.ImgurTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,9 +20,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CatsTheme {
+            ImgurTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CatsScreen()
+                    GalleryScreen()
 //                    Greeting(
 //                        name = "Android",
 //                        modifier = Modifier.padding(innerPadding)
@@ -44,7 +44,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    CatsTheme {
+    ImgurTheme {
         Greeting("Android")
     }
 }

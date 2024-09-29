@@ -12,8 +12,8 @@ class ImgurRepositoryImpl @Inject constructor(private val imgurApiDataSource: Im
     override suspend fun fetchGallery(): Result<List<ImageDetail>> {
         return try {
             val response = imgurApiDataSource.fetchGallery("dogs")
-            val cats = response.map { it.toModel() }
-            Result.success(cats)
+            val gallery = response.map { it.toModel() }
+            Result.success(gallery)
         } catch (e: IOException) {
             Result.failure(Exception(e.message ?: "Unknown error"))
         } catch (e: HttpException) {

@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class FetchGalleryUseCaseImpl @Inject constructor(private val imgurRepository: ImgurRepository)
     : FetchGalleryUseCase {
-    override suspend fun fetchCats(): Result<List<ImageDetail>> {
+    override suspend fun fetchGallery(): Result<List<ImageDetail>> {
         return imgurRepository.fetchGallery()
     }
 }

@@ -1,4 +1,4 @@
-package br.com.evj.gallery
+package br.com.evj.imgur
 
 import org.junit.Test
 

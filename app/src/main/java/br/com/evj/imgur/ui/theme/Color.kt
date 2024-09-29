@@ -1,4 +1,4 @@
-package br.com.evj.gallery.ui.theme
+package br.com.evj.imgur.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

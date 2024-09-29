@@ -1,4 +1,4 @@
-package br.com.evj.gallery.listing
+package br.com.evj.imgur.listing
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,9 +12,9 @@ class GalleryViewModel @Inject constructor(private val fetchGalleryUseCase: Fetc
 //    private val _state = MutableStateFlow(CatsState())
 //    val state = _state.asStateFlow()
 
-    fun fetchCats() {
+    fun fetchGallery() {
         viewModelScope.launch {
-            fetchGalleryUseCase.fetchCats()
+            fetchGalleryUseCase.fetchGallery()
                 .onSuccess {
 
                 }

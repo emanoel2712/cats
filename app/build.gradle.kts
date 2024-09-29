@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "br.com.evj.cats"
+    namespace = "br.com.evj.imgur"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "br.com.evj.cats"
+        applicationId = "br.com.evj.imgur"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

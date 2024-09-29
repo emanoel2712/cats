@@ -6,8 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
 class ServiceProvider @Inject constructor(client: OkHttpClient) {
-    private val baseUrl = "https://escolabackteste.f10.com.br/"
-
+    private val baseUrl = "https://api.imgur.com/3/"
     private val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(client)

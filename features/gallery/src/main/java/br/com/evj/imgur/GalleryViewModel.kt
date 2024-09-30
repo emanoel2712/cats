@@ -1,4 +1,4 @@
-package br.com.evj.imgur.listing
+package br.com.evj.imgur
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,9 +12,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -39,7 +36,9 @@ class GalleryViewModel @Inject constructor(
         viewModelScope.launch {
             galleryItemsFlow
                 .onStart { _state.value = GalleryState.Loading }
-                .catch { exception -> _state.value = GalleryState.Error(exception.message ?: "Unknown error") }
+                .catch { exception -> _state.value =
+                    GalleryState.Error(exception.message ?: "Unknown error")
+                }
                 .collect { galleryItems -> _state.value = GalleryState.Success(galleryItems) }
         }
     }

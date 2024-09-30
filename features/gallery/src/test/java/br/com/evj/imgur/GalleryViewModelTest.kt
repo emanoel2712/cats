@@ -2,8 +2,6 @@ package br.com.evj.imgur
 
 import androidx.paging.PagingData
 import br.com.evj.domain.use_case.FetchGalleryUseCase
-import br.com.evj.imgur.listing.GalleryState
-import br.com.evj.imgur.listing.GalleryViewModel
 import br.com.evj.model.GalleryItem
 import io.mockk.coEvery
 import io.mockk.mockk

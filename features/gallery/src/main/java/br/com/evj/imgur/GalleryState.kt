@@ -1,4 +1,4 @@
-package br.com.evj.imgur.listing
+package br.com.evj.imgur
 
 import androidx.paging.PagingData
 import br.com.evj.model.GalleryItem

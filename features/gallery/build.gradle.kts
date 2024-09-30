@@ -4,6 +4,7 @@ plugins {
 //    alias(libs.plugins.kotlin.kapt)
     kotlin("kapt")
 //    alias(libs.plugins.hilt.android)
+    id("de.mannodermaus.android-junit5") version "1.10.0.0"
 }
 
 android {
@@ -61,9 +62,18 @@ dependencies {
     implementation(libs.paging.compose)
     implementation(libs.coil)
     implementation(libs.coil.compose)
-    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.paging.common.ktx)
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk)
+
+
     implementation(project(":core:domain"))
     implementation(project(":core:model"))
 }

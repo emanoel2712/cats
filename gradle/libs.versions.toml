@@ -25,6 +25,13 @@ paging-runtime = "3.3.2"
 paging-compose = "3.3.2"
 gson = "2.8.8"
 coil = "2.3.0"
+kotlinx-coroutines-test = "1.6.4"
+mockito-core = "5.0.0"
+mockito-kotlin = "4.0.0"
+paging-common-ktx = "3.1.1"
+junit-jupiter-api = "5.7.0"
+junit-jupiter-engine = "5.7.0"
+mockk = "1.12.0"
 
 [libraries]
 # Core libraries
@@ -56,6 +63,14 @@ gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin" }
+paging-common-ktx = { group = "androidx.paging", name = "paging-common-ktx", version.ref = "paging-common-ktx" }
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit-jupiter-api" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit-jupiter-engine" }
 
 # Lifecycle
 lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }

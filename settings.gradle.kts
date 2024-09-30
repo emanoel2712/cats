@@ -21,8 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "imgur"
 include(":app")
-//include(":core")
-include(":core:design_system")
 include(":core:data")
 include(":core:domain")
 include(":core:network")

@@ -15,4 +15,4 @@
 ## Testes Unitários:
 - JUnit
 - Mockito
-- MockK para garantir a qualidade e estabilidade do código
+- MockK
